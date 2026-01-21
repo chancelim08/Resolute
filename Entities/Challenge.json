@@ -1,0 +1,100 @@
+{
+  "name": "Challenge",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the challenge"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the challenge"
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of the challenge"
+    },
+    "duration": {
+      "type": "number",
+      "description": "Duration in days"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of the challenge"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "End date of the challenge"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekdays",
+        "weekends",
+        "custom"
+      ],
+      "default": "daily",
+      "description": "How often the challenge should be completed"
+    },
+    "custom_days": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Custom days of week (0-6, Sunday-Saturday)"
+    },
+    "subtasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Subtasks that need to be completed each day"
+    },
+    "reminder_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "reminder_time": {
+      "type": "string",
+      "description": "Time for daily reminder (HH:MM format)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "abandoned"
+      ],
+      "default": "active"
+    },
+    "current_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "best_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon name for the challenge"
+    }
+  },
+  "required": [
+    "name",
+    "duration",
+    "start_date",
+    "end_date"
+  ]
+}

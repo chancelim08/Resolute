@@ -1,0 +1,20 @@
+{
+  "name": "UserSettings",
+  "type": "object",
+  "properties": {
+    "default_reminder_time": {
+      "type": "string",
+      "default": "09:00",
+      "description": "Default reminder time"
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "light"
+    }
+  },
+  "required": []
+}
