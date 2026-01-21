@@ -1,0 +1,31 @@
+{
+  "name": "DailyLog",
+  "type": "object",
+  "properties": {
+    "challenge_id": {
+      "type": "string",
+      "description": "Reference to the challenge"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the log entry"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the day was fully completed"
+    },
+    "completed_subtasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of completed subtasks for this day"
+    }
+  },
+  "required": [
+    "challenge_id",
+    "date"
+  ]
+}
